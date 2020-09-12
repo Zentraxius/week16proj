@@ -1,3 +1,3 @@
 import React from "react";
 
-export default BarrelDetail;
+// export default BarrelDetail;

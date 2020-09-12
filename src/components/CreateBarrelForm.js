@@ -1,3 +1,3 @@
 import React from "react";
 
-export default CreateBarrelForm;
+// export default CreateBarrelForm;
