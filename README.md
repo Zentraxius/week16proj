@@ -2,7 +2,7 @@
 ## By Cody Fritz
 
 ### Description
-A website built using Create-React-App to let the user manage a Tap-Room and keep track of their kegs contents.
+A website built using Create-React-App to let the user manage a Tap-Room and keep track of their barrels contents.
 
 ### Layout
 <img src='public\Taproom-Diagram.png'>
