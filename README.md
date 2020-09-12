@@ -1,3 +1,12 @@
+# Tap Room
+## By Cody Fritz
+
+### Description
+A website built using Create-React-App to let the user manage a Tap-Room and keep track of their kegs contents.
+
+### Layout
+<img src='public\Taproom-Diagram.png'>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +75,16 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+# Known Bugs
+None, please report any to the developer!
+
+## Support and Developer Contact
+For support please reach out to the developer at clanalia55@gmail.com
+
+### Technologies Used
+HTML | JavaScript | CSS | React
+
+## License
+MIT
+Copyright (c) 2020 **Cody Fritz**
