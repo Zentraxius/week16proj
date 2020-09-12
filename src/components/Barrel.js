@@ -1,6 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+function Barrel(props){
+  return (
+    <React.Fragment>
+      
+      <hr/>
+    </React.Fragment>
+  )
+}
 
 Barrel.propTypes = {
   name: PropTypes.string, // Name of brew "Fifth Mountain Ale"
