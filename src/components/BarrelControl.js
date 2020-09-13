@@ -61,7 +61,7 @@ class BarrelControl extends React.Component {
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}{buttonText}
+        <button onClick={this.handleClick}>{buttonText}
         </button>
       </React.Fragment>
     );
