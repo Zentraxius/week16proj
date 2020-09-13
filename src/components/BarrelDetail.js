@@ -8,9 +8,9 @@ function BarrelDetail(props){
     <React.Fragment>
       <h1>Barrel Details</h1>
       <h3>{barrel.name} by {barrel.brand}</h3>
-      price
-      pints
-      content
+      <p>${barrel.price}</p>
+      <p>Remaining Pints: {barrel.remainingPints}</p>
+      <p>Alcohol Content: %{barrel.abv}</p>
       <hr/>
     </React.Fragment>
   );
