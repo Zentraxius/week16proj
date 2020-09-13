@@ -36,6 +36,7 @@ function CreateBarrelForm(props){
       type='text'
       name='remainingPints'
       placeholder='Number of Pints'/>
+      <br/>
       <button type='submit'>Add a Barrel</button>
     </form>
     </React.Fragment>

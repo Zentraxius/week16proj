@@ -13,10 +13,10 @@ function Barrel(props){
   return (
     <React.Fragment>
 
-      <h2>(Name goes here), by (Brand goes here)</h2>
-      <p>Price will be here</p>
-      <p>Available pints will be here</p>
-      <p>Alcohol content will go here</p>
+      <h2>{Barrel.name}, by {Barrel.brand}</h2>
+      <p>${Barrel.price}/pint</p>
+      <p>Available Pints: {Barrel.remainingPints}</p>
+      <p>Alcohol by Volume: %{Barrel.abv}</p>
       <hr/>
 
       <button onClick={handleSellingBarrel}>This Button will sell a pint!</button>

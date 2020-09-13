@@ -41,6 +41,11 @@ class BarrelControl extends React.Component {
     }
   }
 
+// Needed to ensure pint selling updates value in DOM
+  handleSellingPint = () => {
+  this.forceUpdate();
+}
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
