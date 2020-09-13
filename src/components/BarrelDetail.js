@@ -4,6 +4,10 @@ import PropTypes from "prop-types";
 function BarrelDetail(props){
   const { barrel } = props;
 
+function handleSellingBarrel(){
+
+}
+
   return ( 
     <React.Fragment>
       <h1>Barrel Details</h1>
@@ -17,7 +21,8 @@ function BarrelDetail(props){
 }
 
 BarrelDetail.propTypes = {
-  barrel: PropTypes.object
+  barrel: PropTypes.object,
+  onSellingBarrel: PropTypes.func
 };
 
 export default BarrelDetail;

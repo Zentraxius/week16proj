@@ -32,7 +32,6 @@ Barrel.propTypes = {
   id: PropTypes.number,
   remainingPints: PropTypes.number,
   onBarrelClick: PropTypes.func,
-  onBarrelSell: PropTypes.func
 }
 
 export default Barrel;

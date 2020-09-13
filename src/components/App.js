@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import BarrelControl from "./BarrelControl";
+import Styles from "./Styles.css";
 
 function App(){
 
