@@ -1,7 +1,6 @@
 import React from "react";
 import BarrelList from "./BarrelList";
 import BarrelDetail from "./BarrelDetail";
-import Barrel from "./Barrel";
 import CreateBarrelForm from "./CreateBarrelForm"
 
 class BarrelControl extends React.Component {
@@ -14,6 +13,19 @@ class BarrelControl extends React.Component {
       selectedBarrel: null,
     };
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleAddingNewBarrelToList = (newBarrel) => {
+    const newMasterBarrelList = this.state.masterBarrelList.concat(newBarrel);
+    this.setState({
+      masterBarrelList: newMasterBarrelList,
+      formVisibleOnPage: false
+    });
+  }
+
+  handleChangingSelectedBarrel = (id) => {
+    const selectedBarrel = this.state.masterBarrelList.filter(barrel => barrel.id === id)[0];
+    this.setState({selectedBarrel: selectedBarrel});
   }
 
   handleClick = () => {
