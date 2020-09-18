@@ -11,7 +11,6 @@ function CreateBarrelForm(props){
       brand: event.target.brand.value,
       abv: event.target.abv.value, 
       price: event.target.price.value, 
-      remainingPints: event.target.remainingPints.value,
       remainingPints: 288, // Number of pints in a barrel of beer in the UK!
       id: v4()
     });
@@ -42,12 +41,6 @@ function CreateBarrelForm(props){
       type='text'
       name='abv'
       placeholder='Alcohol by Volume'/>
-      <br/>
-
-      <input 
-      type='text'
-      name='remainingPints'
-      placeholder='Number of Pints'/>
       <br/>
       
       <button type='submit'>Add a Barrel</button>

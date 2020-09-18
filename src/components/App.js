@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import BarrelControl from "./BarrelControl";
-import '../App.css';
+import '../index.css';
 
 
 function App(){

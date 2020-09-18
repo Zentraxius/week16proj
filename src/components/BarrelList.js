@@ -9,13 +9,15 @@ function BarrelList(props){
       {props.barrelList.map((barrel) =>
       <Barrel
       whenBarrelClicked = { props.onBarrelSelection }
-      names = {barrel.name}
+      name = {barrel.name}
       brand = {barrel.brand}
       price = {barrel.price}
       abv = {barrel.abv}
       remainingPints = {barrel.remainingPints}
       id = {barrel.id}
-      key = {barrel.id}/>
+      key = {barrel.id}
+      onBarrelClick={props.onBarrelSelection}
+      />
       )}
       <hr/>
     </React.Fragment>
