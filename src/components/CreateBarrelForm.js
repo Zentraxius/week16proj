@@ -6,7 +6,15 @@ function CreateBarrelForm(props){
   
   function handleNewBarrelFormSubmission(event){
     event.preventDefault();
-    props.onNewBarrelCreation({name: event.target.name.value, brand: event.target.brand.value, abv: event.target.abv.value, price: event.target.price.value, remainingPints: event.target.remainingPints.value})
+    props.onNewBarrelCreation({
+      name: event.target.name.value,
+      brand: event.target.brand.value,
+      abv: event.target.abv.value, 
+      price: event.target.price.value, 
+      remainingPints: event.target.remainingPints.value,
+      remainingPints: 288, // Number of pints in a barrel of beer in the UK!
+      id: v4()
+    });
   }
 
   return (
@@ -17,26 +25,31 @@ function CreateBarrelForm(props){
       name='name'
       placeholder='Barrel Name' />
       <br/>
+
       <input
       type='text'
       name='brand'
       placeholder='Brand' />
       <br/>
+
       <input 
       type='text'
       name='price'
       placeholder='Price'/>
       <br/>
+
       <input 
       type='text'
       name='abv'
       placeholder='Alcohol by Volume'/>
       <br/>
+
       <input 
       type='text'
       name='remainingPints'
       placeholder='Number of Pints'/>
       <br/>
+      
       <button type='submit'>Add a Barrel</button>
     </form>
     </React.Fragment>

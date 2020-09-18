@@ -7,10 +7,12 @@ import '../App.css';
 function App(){
 
   return(
+
 <React.Fragment>
   <Header />
   <BarrelControl />
 </React.Fragment>
+
   );
 }
 
