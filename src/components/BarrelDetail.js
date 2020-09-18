@@ -14,8 +14,14 @@ function viewButtonController(){
 }
 
 function handleClickingSellBarrel() {
-  const remainderPints = barrel.pints -1;
-  props.onSellingBarrel({ name: barrel.name, brand: barrel.brand, abv: barrel.abv, pints: barrel.remainingPints, price: barrel.price, id: barrel.id})
+  var updatedPints = barrel.remainingPints - 1;
+  props.onSellingBarrel({ name: barrel.name, 
+    brand: barrel.brand, 
+    abv: barrel.abv, 
+    pints: updatedPints, 
+    price: barrel.price, 
+    id: barrel.id})
+ // return barrel.remainingPints
 }
 
   return ( 
@@ -24,7 +30,7 @@ function handleClickingSellBarrel() {
       <h3>{barrel.name} by {barrel.brand}</h3>
       <p>${barrel.price}</p>
       <p>Remaining Pints: {barrel.remainingPints}</p>
-      <p>Alcohol Content: %{barrel.abv}</p>
+      <p>Alcohol Content: {barrel.abv}%</p>
       {viewButtonController()}
       <hr/>
     </React.Fragment>
