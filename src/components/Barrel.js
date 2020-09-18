@@ -10,6 +10,7 @@ function Barrel(props){
       <p>${props.price}/pint</p>
       <p>Available Pints: {props.remainingPints}</p>
       <p>Alcohol by Volume: %{props.abv}</p>
+      <p>Click on me to view details and sell pints!</p>
       <hr/>
 
     </div>
