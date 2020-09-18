@@ -1,11 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Button from 'react-bootstrap/Button';
 
 function BarrelDetail(props){
   const { barrel } = props;
 
-function handleSellingBarrel(){
+function viewButtonController(){
+  if (barrel.remainingPints <= 0) {
+    return (<p>Barrel is empty!</p>)
+  } else {
+    return (<Button onClick={handleClickingSellBarrel}>Sell a Pint!</Button>)
+  }
+}
 
+function handleClickingSellBarrel() {
+  const remainderPints = barrel.pints -1;
+  props.onSellingBarrel({ name: barrel.name, brand: barrel.brand, abv: barrel.abv, pints: barrel.remainingPints, price: barrel.price, id: barrel.id})
 }
 
   return ( 
@@ -15,6 +25,7 @@ function handleSellingBarrel(){
       <p>${barrel.price}</p>
       <p>Remaining Pints: {barrel.remainingPints}</p>
       <p>Alcohol Content: %{barrel.abv}</p>
+      {viewButtonController()}
       <hr/>
     </React.Fragment>
   );

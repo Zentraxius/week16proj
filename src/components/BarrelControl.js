@@ -15,8 +15,15 @@ class BarrelControl extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleSellingBarrel()
-
+  handleLowerPint = (reducePintOfBarrel) => {
+    const newMasterBarrelList = this.state.masterBarrelList
+    .filter(barrel => barrel.id !== this.state.selectedBarrel.id)
+    .concat(reducePintOfBarrel).sort((a, b) => a.name.toUpperCase() > b.name.toUpperCase()? 1 : -1);
+    this.setState({
+      selectedBarrel: reducePintOfBarrel,
+      masterBarrelList: newMasterBarrelList
+    });
+  }
   handleAddingNewBarrelToList = (newBarrel) => {
     const newMasterBarrelList = this.state.masterBarrelList.concat(newBarrel);
     this.setState({
@@ -43,17 +50,12 @@ class BarrelControl extends React.Component {
     }
   }
 
-// Needed to ensure pint selling updates value in DOM
-  handleSellingPint = () => {
-  this.forceUpdate();
-}
-
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
 
     if (this.state.selectedBarrel != null) {
-      currentlyVisibleState = <BarrelDetail barrel = {this.state.selectedBarrel} />
+      currentlyVisibleState = <BarrelDetail barrel = {this.state.selectedBarrel} onSellingBarrel={this.handleLowerPint} />
       buttonText = "Return to Barrel List";
 
     } else if (this.state.formVisibleOnPage) {
