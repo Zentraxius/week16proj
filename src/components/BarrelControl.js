@@ -15,6 +15,8 @@ class BarrelControl extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  handleSellingBarrel()
+
   handleAddingNewBarrelToList = (newBarrel) => {
     const newMasterBarrelList = this.state.masterBarrelList.concat(newBarrel);
     this.setState({

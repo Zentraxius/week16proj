@@ -1,22 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function handleSellingBarrel(props){
-  if (Barrel.remainingPints != 0) {
-    // barrel pints -1
-  } else {
-    // barrel has no remaining pints
-  }
-}
-
 function Barrel(props){
   return (
     <React.Fragment>
 
-      <h2>{Barrel.name}, by {Barrel.brand}</h2>
-      <p>${Barrel.price}/pint</p>
-      <p>Available Pints: {Barrel.remainingPints}</p>
-      <p>Alcohol by Volume: %{Barrel.abv}</p>
+      <h2>{props.name}, by {props.brand}</h2>
+      <p>${props.price}/pint</p>
+      <p>Available Pints: {props.remainingPints}</p>
+      <p>Alcohol by Volume: %{props.abv}</p>
       <hr/>
 
       <button onClick={handleSellingBarrel}>This Button will sell a pint!</button>
