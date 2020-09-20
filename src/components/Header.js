@@ -1,7 +1,7 @@
 import React from "react";
 
 function Header(){
-  return (
+  return ( //<Link style={linkStyle} to="/about">About</Link>
     <h1>Hatchet and Barrel</h1>
   );
 }

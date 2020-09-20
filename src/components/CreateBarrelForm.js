@@ -1,6 +1,7 @@
 import React from "react";
 import { v4 } from "uuid";
 import PropTypes from "prop-types";
+import ReusableForm from "./ReusableForm";
 
 function CreateBarrelForm(props){
   
@@ -18,33 +19,9 @@ function CreateBarrelForm(props){
 
   return (
     <React.Fragment>
-    <form onSubmit={handleNewBarrelFormSubmission}>
-      <input
-      type='text'
-      name='name'
-      placeholder='Barrel Name' />
-      <br/>
-
-      <input
-      type='text'
-      name='brand'
-      placeholder='Brand' />
-      <br/>
-
-      <input 
-      type='text'
-      name='price'
-      placeholder='Price'/>
-      <br/>
-
-      <input 
-      type='text'
-      name='abv'
-      placeholder='Alcohol by Volume'/>
-      <br/>
-      
-      <button type='submit'>Add a Barrel</button>
-    </form>
+      <ReusableForm 
+      formSubmissionHandler={handleNewBarrelFormSubmission}
+      buttonText="Add Barrel"/>
     </React.Fragment>
   );
 }

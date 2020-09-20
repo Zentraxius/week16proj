@@ -1,7 +1,6 @@
 import React from "react";
 import ReusableForm from "./ReuseableForm";
 import PropTypes from "prop-types";
-import Barrel from "./Barrel";
 
 function EditBarrelForm(props) {
   const { barrel } = props;
