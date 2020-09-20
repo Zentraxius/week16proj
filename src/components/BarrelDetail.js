@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 function BarrelDetail(props){
   const { barrel } = props;
 
-function viewButtonController(){
+function viewButtonController() {
   if (barrel.remainingPints <= 0) {
     return (<p>Barrel is empty!</p>)
   } else {
@@ -14,14 +14,11 @@ function viewButtonController(){
 }
 
 function handleClickingSellBarrel() {
-  var updatedPints = barrel.remainingPints - 1;
-  props.onSellingBarrel({ name: barrel.name, 
-    brand: barrel.brand, 
-    abv: barrel.abv, 
-    pints: updatedPints, 
-    price: barrel.price, 
-    id: barrel.id})
- // return barrel.remainingPints
+  if (barrel.remainingPints > 0) {
+    props.onSellingBarrel(barrel.remainingPints -1)
+  } else {
+    props.onSellingBarrel(barrel.remainingPints = 0)
+  }
 }
 
   return ( 

@@ -9,7 +9,7 @@ class BarrelControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      masterBarrelList: [],
+      masterBarrelList: [{name: "test", brand: "test", price: 22, abv: 10, remainingPints: 288, id: 1}, {name: "TEST2", brand: "TEST2", price: 33, abv: 51, remainingPints: 288, id: 2}],
       selectedBarrel: null,
     };
     this.handleClick = this.handleClick.bind(this);
@@ -17,13 +17,21 @@ class BarrelControl extends React.Component {
 
   handleLowerPint = (reducePintOfBarrel) => {
     const newMasterBarrelList = this.state.masterBarrelList
-    .filter(barrel => barrel.id !== this.state.selectedBarrel.id)
-    .concat(reducePintOfBarrel).sort((a, b) => a.name.toUpperCase() > b.name.toUpperCase()? 1 : -1);
+    if (newMasterBarrelList.length > 0){
+      for(let barrel of newMasterBarrelList){
+        let index = newMasterBarrelList.indexOf(barrel);
+        if(newMasterBarrelList[index].id === reducePintOfBarrel.id){
+          newMasterBarrelList[index] -= 1;
+          console.log(newMasterBarrelList + " " + newMasterBarrelList[index])
+        }
+      }
+    }
     this.setState({
-      selectedBarrel: reducePintOfBarrel,
-      masterBarrelList: newMasterBarrelList
+      masterBarrelList: newMasterBarrelList,
+      selectedBarrel: reducePintOfBarrel
     });
   }
+
   handleAddingNewBarrelToList = (newBarrel) => {
     const newMasterBarrelList = this.state.masterBarrelList.concat(newBarrel);
     this.setState({
@@ -48,6 +56,10 @@ class BarrelControl extends React.Component {
         formVisibleOnPage: !prevState.formVisibleOnPage,
       }));
     }
+  }
+
+  handleForceUpdate = () => {
+    this.forceUpdate();
   }
 
   render() {

@@ -8,7 +8,6 @@ function BarrelList(props){
       <hr/>
       {props.barrelList.map((barrel) =>
       <Barrel
-      whenBarrelClicked = { props.onBarrelSelection }
       name = {barrel.name}
       brand = {barrel.brand}
       price = {barrel.price}
