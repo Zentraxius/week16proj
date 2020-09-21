@@ -5,20 +5,10 @@ import Button from 'react-bootstrap/Button';
 function BarrelDetail(props){
   const { barrel } = props;
 
-function viewButtonController() {
-  if (barrel.remainingPints <= 0) {
-    return (<p>Barrel is empty!</p>)
-  } else {
-    return (<Button onClick={handleClickingSellBarrel}>Sell a Pint!</Button>)
-  }
-}
-
 function handleClickingSellBarrel() {
-  if (barrel.remainingPints > 0) {
-    props.onSellingBarrel(barrel.remainingPints -1)
-  } else {
-    props.onSellingBarrel(barrel.remainingPints = 0)
-  }
+  if (barrel.remainingPints !=0){
+    props.onSellingBarrel(barrel.remainingPints--)
+  }else{props.onSellingBarrel(barrel.remainingPints=0)}
 }
 
   return ( 
@@ -28,7 +18,8 @@ function handleClickingSellBarrel() {
       <p>${barrel.price}</p>
       <p>Remaining Pints: {barrel.remainingPints}</p>
       <p>Alcohol Content: {barrel.abv}%</p>
-      {viewButtonController()}
+      <Button onClick={handleClickingSellBarrel}>Sell a Pint!</Button>
+      <Button onClick={props.onClickingEdit}>Edit Barrel</Button>
       <hr/>
     </React.Fragment>
   );
@@ -38,5 +29,4 @@ BarrelDetail.propTypes = {
   barrel: PropTypes.object,
   onSellingBarrel: PropTypes.func
 };
-
 export default BarrelDetail;
