@@ -98,6 +98,7 @@ class BarrelControl extends React.Component {
       currentlyVisibleState = (
         <BarrelDetail
           barrel={this.state.selectedBarrel}
+          onSellingBarrel={this.handleLowerPint}
           onClickingEdit={this.handleEditClick}
         />
       );

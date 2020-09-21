@@ -5,11 +5,14 @@ import Button from 'react-bootstrap/Button';
 function BarrelDetail(props){
   const { barrel } = props;
 
-function handleClickingSellBarrel() {
-  if (barrel.remainingPints !=0){
-    props.onSellingBarrel(barrel.remainingPints--)
-  }else{props.onSellingBarrel(barrel.remainingPints=0)}
-}
+  function handleClickingSellBarrel(){
+    if (barrel.remainingPints === 0){
+      props.onSellingBarrel(barrel.remainingPints = 0)
+    }
+    else {
+      props.onSellingBarrel(barrel.remainingPints --)
+    }
+  }
 
   return ( 
     <React.Fragment>

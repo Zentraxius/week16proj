@@ -1,12 +1,13 @@
 import React from "react";
-import {Link} from "react-router-dom";
 
 function Header() {
   return (
+<div>
     <header>
       <h1>Hatchet and Barrel</h1>
-      <Link to="/">Home</Link>
     </header>
+</div>
+
   )
 }
 
