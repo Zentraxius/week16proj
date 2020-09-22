@@ -19,10 +19,10 @@ function Barrel(props){
 }
 
 Barrel.propTypes = {
-  name: PropTypes.string.isRequired, // Name of brew "Fifth Mountain Ale"
-  brand: PropTypes.string.isRequired, // Brand of Barrel "Jack Daniels"
-  price: PropTypes.number.isRequired, // Price for a pint "$1.25"
-  abv: PropTypes.number.isRequired, // Alcohol by volume, "5.5%"
+  name: PropTypes.string, // Name of brew "Fifth Mountain Ale"
+  brand: PropTypes.string, // Brand of Barrel "Jack Daniels"
+  price: PropTypes.string, // Price for a pint "$1.25"
+  abv: PropTypes.string, // Alcohol by volume, "5.5%"
   id: PropTypes.string,
   remainingPints: PropTypes.number,
   onBarrelClick: PropTypes.func,

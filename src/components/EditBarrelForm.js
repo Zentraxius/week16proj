@@ -7,7 +7,7 @@ function EditBarrelForm(props) {
   function handleEditBarrelFormSubmission(event) {
     event.preventDefault();
     props.onEditBarrel({
-      names: event.target.names.value,
+      name: event.target.name.value,
       brand: event.target.brand.value,
       abv: event.target.abv.value,
       price: event.target.price.value,

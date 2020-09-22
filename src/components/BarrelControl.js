@@ -14,18 +14,18 @@ class BarrelControl extends React.Component {
         {
           name: "Hatchet's Lager",
           brand: "Hatchet & Barrel",
-          price: 22,
-          abv: 25,
+          price: "22",
+          abv: "25",
           remainingPints: 288,
-          id: 1,
+          id: "1",
         },
         {
           name: "Barrel's Brew",
           brand: "Hatchet & Barrel",
-          price: 33,
-          abv: 51,
+          price: "33",
+          abv: "51",
           remainingPints: 288,
-          id: 2,
+          id: "2",
         },
       ],
       selectedBarrel: null,
@@ -34,8 +34,14 @@ class BarrelControl extends React.Component {
     //this.handleClick = this.handleClick.bind(this);
   }
   //
-  handleLowerPint = () => {
-    this.forceUpdate();
+  handleLowerPint = (barrelToSell) => {
+    if(barrelToSell.remainingPints>0){
+      barrelToSell.remainingPints--
+    }
+    const editedMasterBarrelList = this.state.masterBarrelList
+    .filter((barrel) => barrel.id !== this.state.selectedBarrel.id)
+    .concat(barrelToSell);
+    this.setState({masterBarrelList: editedMasterBarrelList, editing: false});
   };
   //
   handleAddingNewBarrelToList = (newBarrel) => {
