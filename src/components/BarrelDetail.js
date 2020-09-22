@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Button from 'react-bootstrap/Button';
 
 function BarrelDetail(props){
-  const { barrel } = props;
+  const { barrel, onSellingBarrel } = props;
 
   // function handleClickingSellBarrel(){
   //   if (barrel.remainingPints === 0){
@@ -21,7 +21,7 @@ function BarrelDetail(props){
       <p>${barrel.price}</p>
       <p>Remaining Pints: {barrel.remainingPints}</p>
       <p>Alcohol Content: {barrel.abv}%</p>
-      <Button onClick={props.onSellingBarrel}>Sell a Pint!</Button>
+      <Button onClick={() => onSellingBarrel(barrel)}>Sell a Pint!</Button>
       <Button onClick={props.onClickingEdit}>Edit Barrel</Button>
       <hr/>
     </React.Fragment>

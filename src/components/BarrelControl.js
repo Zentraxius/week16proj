@@ -35,15 +35,17 @@ class BarrelControl extends React.Component {
   }
   //
   handleLowerPint = (barrelToSell) => {
+    console.log(barrelToSell)
     if(barrelToSell.remainingPints>0){
       barrelToSell.remainingPints--
     }
     const editedMasterBarrelList = this.state.masterBarrelList
     .filter((barrel) => barrel.id !== this.state.selectedBarrel.id)
     .concat(barrelToSell);
+    console.log("setting state for handle")
     this.setState({masterBarrelList: editedMasterBarrelList, editing: false});
   };
-  //
+  
   handleAddingNewBarrelToList = (newBarrel) => {
     const newMasterBarrelList = this.state.masterBarrelList.concat(newBarrel);
     this.setState({
